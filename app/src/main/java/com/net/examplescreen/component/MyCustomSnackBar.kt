@@ -1,5 +1,6 @@
 package com.net.examplescreen.component
 
+import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -19,6 +20,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -49,9 +51,11 @@ fun MyCustomSnackBar(
     onDismiss: (() -> Unit)? = null
 ) {
 
+
+
     var visible by remember { mutableStateOf(true) }
     LaunchedEffect(Unit) {
-        delay(1000)
+        delay(3000)
         visible = false
         onDismiss?.invoke()
     }
